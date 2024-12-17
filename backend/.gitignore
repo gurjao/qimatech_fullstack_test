@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+.gitattributes
+
 ### STS ###
 .apt_generated
 .classpath
@@ -35,3 +37,9 @@ build/
 
 # Ignorar arquivos do macOS
 .DS_Store
+**/.DS_Store
+
+# Maven cache
+.mvn/
+mvnw
+mvnw.cmd
