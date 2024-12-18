@@ -1,7 +1,8 @@
 # qimatech_fullstack_test
 Fullstack project for test QIMA Tech
 
-`QIMAtech_FullStack
+```
+QIMAtech_FullStack
 │
 ├── backend/
 │   ├── src/
@@ -33,4 +34,5 @@ Fullstack project for test QIMA Tech
     ├── package.json
     ├── tsconfig.app.json
     ├── tsconfig.json
-    └── tsconfig.spec.json`
+    └── tsconfig.spec.json
+    ```
