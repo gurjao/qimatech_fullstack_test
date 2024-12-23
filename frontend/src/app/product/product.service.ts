@@ -9,15 +9,15 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('Ocorreu um erro no cliente:', error.error.message);
+  private handleError(error: any): Observable<never> {
+    if (error.error && error.error.message) {
+      console.error('Erro no cliente:', error.error.message);
     } else {
       console.error(
-        `Erro no backend - Código ${error.status}, Corpo: ${error.error}`
+        `Erro no backend - Código ${error.status}, Corpo: ${error.message || JSON.stringify(error)}`
       );
     }
-    return throwError(() => new Error('Algo de errado aconteceu; tente novamente mais tarde.'));
+    return throwError(() => new Error('Algo deu errado; por favor, tente novamente mais tarde.'));
   }
 
   getProducts(): Observable<Product[]> {

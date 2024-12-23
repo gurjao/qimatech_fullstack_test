@@ -32,7 +32,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @Valid @RequestBody Product product) {
-        product.setId(id); // Garante que o ID passado na rota será utilizado
+        product.setId(id);
         Product updatedProduct = productService.updateProduct(product);
         return ResponseEntity.ok(updatedProduct);
     }
