@@ -34,8 +34,8 @@ QIMAtech_FullStack
     ├── package.json
     ├── tsconfig.app.json
     ├── tsconfig.json
-    └── tsconfig.spec.json```
-
+    └── tsconfig.spec.json
+```
 
 ### Backend:
 
