@@ -41,8 +41,8 @@ QIMAtech_FullStack
 
 **Paths**:
 
-mvn clean install -U
-mvn spring-boot:run
+- mvn clean install -U
+- mvn spring-boot:run
 
 ![Paths](image.png)
 
