@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './models/product';
 import { ProductService } from './product.service';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -31,7 +30,7 @@ import { RouterModule } from '@angular/router';
     ProductFormComponent
   ],
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
@@ -45,7 +44,15 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(products => this.products = products);
+    this.productService.getProducts().subscribe({
+      next: (products) => {
+          this.products = products;
+          console.log("Resposta do backend (no componente):", products);
+      },
+      error: (error) => {
+          console.error('Erro ao carregar produtos:', error);
+      }
+  });
   }
 
   handleProductChange(product: Product | null): void {

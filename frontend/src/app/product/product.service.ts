@@ -1,6 +1,6 @@
 import { Product } from './models/product';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError, map, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -23,7 +23,7 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl).pipe(
       tap(response => console.log('Resposta do Backend:', response)),
-      map(response => Array.isArray(response) ? response : []), // Garantir que o retorno seja um array
+      map(response => Array.isArray(response) ? response : []),
       catchError(this.handleError)
     );
   }
