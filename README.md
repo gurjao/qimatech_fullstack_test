@@ -36,3 +36,9 @@ QIMAtech_FullStack
     ├── tsconfig.json
     └── tsconfig.spec.json```
 
+
+### Backend:
+
+**Paths**:
+
+![Paths](image.png)
